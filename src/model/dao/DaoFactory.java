@@ -13,7 +13,7 @@ public class DaoFactory {
 	
 	public static DepartmentDao creatDepartmentDao() {
 		
-		return new DepartmentDaoJDBC();
+		return new DepartmentDaoJDBC(DB.getConnection());
 	}
 
 }
