@@ -14,16 +14,23 @@ public class Program2 {
 		Scanner sc = new Scanner(System.in);
 		DepartmentDao departmentDao = DaoFactory.creatDepartmentDao();
 		
-		System.out.println("----- TEST 1: seller findById -----");
+		System.out.println("----- TEST 1: Department findById -----");
 		Department department = departmentDao.findById(4);
 		System.out.println(department);
 		System.out.println();
 		
-		System.out.println("----- TEST 3: seller findAll -----");
+		System.out.println("----- TEST 3: Department findAll -----");
 		List<Department> list = departmentDao.findAll();
 		for(Department d : list) {
 			System.out.println(d);
 		}
+		System.out.println();
+		
+		
+		System.out.println("----- TEST 4: Department insert -----");
+		department = new Department(null,"Technical");
+		departmentDao.insert(department);
+		System.out.println("Inserted ! New id = " + department.getId());
 		System.out.println();
 		
 		
