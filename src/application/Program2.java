@@ -19,7 +19,7 @@ public class Program2 {
 		System.out.println(department);
 		System.out.println();
 		
-		System.out.println("----- TEST 3: Department findAll -----");
+		System.out.println("----- TEST 2: Department findAll -----");
 		List<Department> list = departmentDao.findAll();
 		for(Department d : list) {
 			System.out.println(d);
@@ -27,12 +27,18 @@ public class Program2 {
 		System.out.println();
 		
 		
-		System.out.println("----- TEST 4: Department insert -----");
+		System.out.println("----- TEST 3: Department insert -----");
 		department = new Department(null,"Technical");
 		departmentDao.insert(department);
 		System.out.println("Inserted ! New id = " + department.getId());
 		System.out.println();
 		
+		System.out.println("----- TEST 4: Department update -----");
+		department = departmentDao.findById(2);
+		department.setName("Logistic");
+		departmentDao.update(department);
+		System.out.println("Update completed !");
+		System.out.println();
 		
 		sc.close();
 	}
